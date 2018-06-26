@@ -1,16 +1,16 @@
-import React from 'react'
+  import React from 'react'
 import { connect } from 'react-redux'
 
 import Header from './header'
-import Main from './main'
+import APIStructureTester from './main'
 
 class App extends React.Component {
   render () {
     return (
-      <React.Fragment>
+      <div>
         <Header />
-        <Main apiMeta={this.props.apiMeta} />
-      </React.Fragment>
+        <APIStructureTester apiMeta={this.props.apiMeta} />
+      </div>
     )
   }
 }
@@ -18,7 +18,6 @@ class App extends React.Component {
 const mapStateToProps = (store) => {
   return {
     apiMeta: store.apiMeta
-    
   }
 }
 
