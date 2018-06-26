@@ -25724,12 +25724,73 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var apis = [{
   id: 1,
-  displayName: 'Home Page Section API',
-  url: 'https://stub.mxplay.com/web/api/v0/home',
-  params: {
-    tab: 1
-  },
-  // json: home,
+  displayName: 'Home page - List of Tabs',
+  url: 'https://api.dev.mxplay.com/v1/home/tabs',
+  // params: {
+  //   tab: 1
+  // },
+  cookies: "userId=123",
+  json: _home2.default,
+  method: 'GET'
+}, {
+  id: 2,
+  displayName: 'Home page - Home Banners',
+  url: 'https://api.dev.mxplay.com/v1/home/banners/1',
+  // params: {
+  //   tab: 1
+  // },
+  cookies: "userId=123",
+  json: _home2.default,
+  method: 'GET'
+}, {
+  id: 3,
+  displayName: 'Home page - Home Sections',
+  url: 'https://api.dev.mxplay.com/v1/home/tab/1',
+  // params: {
+  //   tab: 1
+  // },
+  cookies: "userId=123",
+  json: _home2.default,
+  method: 'GET'
+}, {
+  id: 4,
+  displayName: 'Home page - Buzz Banners',
+  url: 'https://api.dev.mxplay.com/v1/home/banners/',
+  // params: {
+  //   tab: 1
+  // },
+  cookies: "userId=123",
+  json: _home2.default,
+  method: 'GET'
+}, {
+  id: 5,
+  displayName: 'Home page - Buzz Sections',
+  url: 'https://api.dev.mxplay.com/v1/home/tab/2',
+  // params: {
+  //   tab: 1
+  // },
+  cookies: "userId=123",
+  json: _home2.default,
+  method: 'GET'
+}, {
+  id: 6,
+  displayName: 'Home page - Shorts Banners',
+  url: 'https://api.dev.mxplay.com/v1/home/banners/3',
+  // params: {
+  //   tab: 1
+  // },
+  cookies: "userId=123",
+  json: _home2.default,
+  method: 'GET'
+}, {
+  id: 7,
+  displayName: 'Home page - Shorts Sections',
+  url: 'https://api.dev.mxplay.com/v1/home/tab/3',
+  // params: {
+  //   tab: 1
+  // },
+  cookies: "userId=123",
+  json: _home2.default,
   method: 'GET'
 }];
 
@@ -25813,8 +25874,10 @@ var sectionItem = {
 
 var section = {
   style: {
-    type: 'String',
-    value: 'pic_left'
+    type: 'Enum',
+    possibleValues: ['pic_left', 'slide']
+    // type: 'Constant',
+    // expectedValue: 'slide'
   },
   name: {
     type: 'String'
@@ -25833,6 +25896,18 @@ exports.default = {
     type: 'Array',
     value: section
   }
+
+  // type: 'Enum',
+  // possibleValues: ['pic_left', 'slide'],
+  // type: 'Constant',
+  // expectedValue: 'slide'
+
+
+  // const types = [ 'Array', 'Object', 'String', 'Number', 'Constant', 'Enum' ]
+
+  // To implement
+  // Boolean, Array of Strings or Numbers
+
 };
 
 /***/ }),
@@ -25887,7 +25962,11 @@ function makeAPICall(selectedAPI, dispatch) {
   return (0, _axios2.default)({
     url: selectedAPI.url,
     method: selectedAPI.method,
-    params: selectedAPI.params
+    params: selectedAPI.params,
+    headers: {
+      Cookie: selectedAPI.cookies
+    },
+    withCredentials: true
   }).then(function (_ref) {
     var data = _ref.data;
 
@@ -25916,7 +25995,6 @@ function testJSONStructure(json, data) {
     var errorResult = [];
     var path = [];
     parseJSON(json, data, path, finalResult, errorResult);
-    debugger;
     resolve({ finalResult: finalResult, errorResult: errorResult });
   });
 }
@@ -25953,6 +26031,19 @@ function parseJSON(json, data, path, result, errorResult) {
         break;
       case 'Number':
         typeMatched = typeof data[key] === 'number' ? true : false;
+        break;
+      case 'Enum':
+        var value = data[key];
+        var possibleValues = json[key].possibleValues;
+        if (Array.isArray(possibleValues)) {
+          typeMatched = possibleValues.indexOf(value) !== -1;
+        }
+        break;
+      case 'Constant':
+        var currentValue = data[key];
+        var expectedValue = json[key].expectedValue;
+
+        typeMatched = currentValue === expectedValue;
         break;
     }
 

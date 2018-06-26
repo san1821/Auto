@@ -61,8 +61,10 @@ const sectionItem = {
 
 const section = {
   style: {
-    type: 'String',
-    value: 'pic_left'
+    type: 'Enum',
+    possibleValues: ['pic_left', 'slide'],
+    // type: 'Constant',
+    // expectedValue: 'slide'
   },
   name: {
     type: 'String'
@@ -82,3 +84,14 @@ export default {
     value: section
   }
 }
+
+    // type: 'Enum',
+    // possibleValues: ['pic_left', 'slide'],
+    // type: 'Constant',
+    // expectedValue: 'slide'
+
+
+// const types = [ 'Array', 'Object', 'String', 'Number', 'Constant', 'Enum' ]
+
+// To implement
+// Boolean, Array of Strings or Numbers

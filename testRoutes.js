@@ -1,5 +1,5 @@
 var axios = require('axios')
-var apiMeta = require('../../apiManifest')
+var apiMeta = require('../apiDetails')
 
 function checkAPI (api) {
   var apiUrl = api.url

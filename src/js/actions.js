@@ -19,7 +19,11 @@ function makeAPICall(selectedAPI, dispatch) {
   return axios({
     url: selectedAPI.url,
     method: selectedAPI.method,
-    params: selectedAPI.params
+    params: selectedAPI.params,
+    headers: {
+      Cookie: selectedAPI.cookies
+    },
+    withCredentials: true
   }).then(({data}) => {
     testJSONStructure(selectedAPI.json, data).then(({finalResult, errorResult}) => {
       dispatch({
@@ -43,7 +47,6 @@ function testJSONStructure (json, data) {
     const errorResult = []
     const path = []
     parseJSON(json, data, path, finalResult, errorResult)
-    debugger
     resolve({finalResult, errorResult})    
   })
 }
@@ -80,6 +83,19 @@ function parseJSON (json, data, path, result, errorResult) {
         break
       case 'Number':
         typeMatched = (typeof data[key] === 'number') ? true : false
+        break
+      case 'Enum':
+        const value = data[key]
+        const possibleValues = json[key].possibleValues
+        if (Array.isArray(possibleValues)) {
+          typeMatched = (possibleValues.indexOf(value) !== -1)
+        }
+        break
+      case 'Constant':
+        const currentValue = data[key]
+        const expectedValue = json[key].expectedValue
+
+        typeMatched = (currentValue === expectedValue)
         break
     }
 
