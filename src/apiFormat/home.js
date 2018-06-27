@@ -85,10 +85,20 @@ export default {
   }
 }
 
-    // type: 'Enum',
-    // possibleValues: ['pic_left', 'slide'],
-    // type: 'Constant',
-    // expectedValue: 'slide'
+
+
+
+
+
+
+
+
+
+
+// type: 'Enum',
+// possibleValues: ['pic_left', 'slide'],
+// type: 'Constant',
+// expectedValue: 'slide'
 
 
 // const types = [ 'Array', 'Object', 'String', 'Number', 'Constant', 'Enum' ]

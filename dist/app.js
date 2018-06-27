@@ -25720,6 +25720,14 @@ var _home = __webpack_require__(/*! ../apiFormat/home */ "./src/apiFormat/home.j
 
 var _home2 = _interopRequireDefault(_home);
 
+var _tabList = __webpack_require__(/*! ../apiFormat/tabList */ "./src/apiFormat/tabList.js");
+
+var _tabList2 = _interopRequireDefault(_tabList);
+
+var _homeBanner = __webpack_require__(/*! ../apiFormat/homeBanner */ "./src/apiFormat/homeBanner.js");
+
+var _homeBanner2 = _interopRequireDefault(_homeBanner);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var apis = [{
@@ -25730,7 +25738,7 @@ var apis = [{
   //   tab: 1
   // },
   cookies: "userId=123",
-  json: _home2.default,
+  json: _tabList2.default,
   method: 'GET'
 }, {
   id: 2,
@@ -25740,7 +25748,7 @@ var apis = [{
   //   tab: 1
   // },
   cookies: "userId=123",
-  json: _home2.default,
+  json: _homeBanner2.default,
   method: 'GET'
 }, {
   id: 3,
@@ -25908,6 +25916,77 @@ exports.default = {
   // To implement
   // Boolean, Array of Strings or Numbers
 
+};
+
+/***/ }),
+
+/***/ "./src/apiFormat/homeBanner.js":
+/*!*************************************!*\
+  !*** ./src/apiFormat/homeBanner.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var bannersItems = {
+  subTitle: {
+    type: 'String'
+  },
+  id: {
+    type: 'String'
+  },
+  title: {
+    type: 'String'
+  },
+  poster: {
+    type: 'String'
+  },
+  type: {
+    type: 'String'
+  }
+};
+
+exports.default = {
+  banners: {
+    type: 'Array',
+    value: bannersItems
+  }
+};
+
+/***/ }),
+
+/***/ "./src/apiFormat/tabList.js":
+/*!**********************************!*\
+  !*** ./src/apiFormat/tabList.js ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var tabsItems = {
+  id: {
+    type: 'String'
+  },
+  title: {
+    type: 'String'
+  }
+};
+
+exports.default = {
+  tabs: {
+    type: 'Array',
+    value: tabsItems
+  }
 };
 
 /***/ }),

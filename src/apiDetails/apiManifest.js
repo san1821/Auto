@@ -1,4 +1,7 @@
 import home from '../apiFormat/home'
+import tabList from '../apiFormat/tabList'
+import homeBanner from '../apiFormat/homeBanner'
+
 
 var apis = [{
   id: 1,
@@ -8,7 +11,7 @@ var apis = [{
   //   tab: 1
   // },
   cookies: "userId=123",
-  json: home,
+  json: tabList,
   method: 'GET'
 },{
   id: 2,
@@ -18,7 +21,7 @@ var apis = [{
   //   tab: 1
   // },
   cookies: "userId=123",
-  json: home,
+  json: homeBanner,
   method: 'GET'
 },{
   id: 3,
