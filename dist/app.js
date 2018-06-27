@@ -25728,6 +25728,10 @@ var _homeBanner = __webpack_require__(/*! ../apiFormat/homeBanner */ "./src/apiF
 
 var _homeBanner2 = _interopRequireDefault(_homeBanner);
 
+var _homeSection = __webpack_require__(/*! ../apiFormat/homeSection */ "./src/apiFormat/homeSection.js");
+
+var _homeSection2 = _interopRequireDefault(_homeSection);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var apis = [{
@@ -25758,7 +25762,7 @@ var apis = [{
   //   tab: 1
   // },
   cookies: "userId=123",
-  json: _home2.default,
+  json: _homeSection2.default,
   method: 'GET'
 }, {
   id: 4,
@@ -25955,6 +25959,161 @@ exports.default = {
   banners: {
     type: 'Array',
     value: bannersItems
+  }
+};
+
+/***/ }),
+
+/***/ "./src/apiFormat/homeSection.js":
+/*!**************************************!*\
+  !*** ./src/apiFormat/homeSection.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+
+var publisherItem = {
+  imageUrl: {
+    type: 'String'
+  },
+  name: {
+    type: 'String'
+  },
+  videoCount: {
+    type: 'Number'
+  },
+  id: {
+    type: 'String'
+  }
+};
+
+var containerItem = {
+  title: {
+    type: 'String'
+  },
+  type: {
+    type: 'String'
+  },
+  // sequence: {
+  //   type: ''
+  // },
+  id: {
+    type: 'String'
+    // container: {
+    //   type: ''
+    // }
+  } };
+
+var dashItem = {
+  // high: {
+  //   type: ''
+  // },
+  // base: {
+  //   type: ''
+  // },
+  main: {
+    type: 'String'
+  }
+};
+
+var hlsItem = {
+  // high: {
+  //   type: ''
+  // },
+  // base: {
+  //   type: ''
+  // },
+  main: {
+    type: 'String'
+  }
+};
+
+var streamItem = {
+  dash: {
+    type: 'Object',
+    value: dashItem
+  },
+  hls: {
+    type: 'Object',
+    value: hlsItem
+  }
+};
+
+var itemsItem = {
+  duration: {
+    type: 'Number'
+  },
+  title: {
+    type: 'String'
+  },
+  publishTime: {
+    type: 'Number'
+  },
+  imageUrl: {
+    type: 'String'
+  },
+  stream: {
+    type: 'Object',
+    value: streamItem
+  },
+  sequence: {
+    type: 'Number'
+  },
+  type: {
+    type: 'String'
+  },
+  publisher: {
+    type: 'Object',
+    value: publisherItem
+  },
+  id: {
+    type: 'String' // add data
+  },
+  languages: {
+    type: 'Array' // add data
+  },
+  genres: {
+    type: 'Array' // add data
+  },
+  container: {
+    type: 'Object',
+    value: containerItem // add data
+  }
+};
+
+var sectionsItems = {
+  id: {
+    type: 'String'
+  },
+  style: {
+    type: 'String'
+  },
+  items: {
+    type: 'Array',
+    value: itemsItem
+  },
+  next: {
+    type: 'String'
+  },
+  name: {
+    type: 'String'
+  }
+};
+
+exports.default = {
+  next: {
+    type: 'String'
+  },
+  sections: {
+    type: 'Array',
+    value: sectionsItems
   }
 };
 

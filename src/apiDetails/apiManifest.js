@@ -1,6 +1,7 @@
 import home from '../apiFormat/home'
 import tabList from '../apiFormat/tabList'
 import homeBanner from '../apiFormat/homeBanner'
+import homeSection from '../apiFormat/homeSection'
 
 
 var apis = [{
@@ -31,7 +32,7 @@ var apis = [{
   //   tab: 1
   // },
   cookies: "userId=123",
-  json: home,
+  json: homeSection,
   method: 'GET'
 },{
   id: 4,
