@@ -107,7 +107,7 @@ const itemsItem = {
   },
   container: {
     type: 'Object',
-    value: containerItem                           // add data
+    value: containerItem                       // add data
   }
 }
 

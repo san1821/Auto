@@ -7,9 +7,14 @@ import APIStructureTester from './main'
 class App extends React.Component {
   render () {
     return (
-      <div>
-        <Header />
-        <APIStructureTester apiMeta={this.props.apiMeta} />
+      <div className= 'page-container'>
+        <div className='detail-container'>
+          List
+        </div>
+        <div className= 'list-container'>
+          <Header />
+          <APIStructureTester apiMeta={this.props.apiMeta} />
+        </div>
       </div>
     )
   }

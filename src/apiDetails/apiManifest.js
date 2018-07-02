@@ -37,12 +37,12 @@ var apis = [{
 },{
   id: 4,
   displayName: 'Home page - Buzz Banners',
-  url: 'https://api.dev.mxplay.com/v1/home/banners/',
+  url: 'https://api.dev.mxplay.com/v1/home/banners/3',
   // params: {
   //   tab: 1
   // },
   cookies: "userId=123",
-  json: home,
+  json: homeBanner,
   method: 'GET'
 },{
   id: 5,
@@ -52,7 +52,7 @@ var apis = [{
   //   tab: 1
   // },
   cookies: "userId=123",
-  json: home,
+  json: homeSection,
   method: 'GET'
 },{
   id: 6,

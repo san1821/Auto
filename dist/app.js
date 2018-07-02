@@ -25767,12 +25767,12 @@ var apis = [{
 }, {
   id: 4,
   displayName: 'Home page - Buzz Banners',
-  url: 'https://api.dev.mxplay.com/v1/home/banners/',
+  url: 'https://api.dev.mxplay.com/v1/home/banners/3',
   // params: {
   //   tab: 1
   // },
   cookies: "userId=123",
-  json: _home2.default,
+  json: _homeBanner2.default,
   method: 'GET'
 }, {
   id: 5,
@@ -25782,7 +25782,7 @@ var apis = [{
   //   tab: 1
   // },
   cookies: "userId=123",
-  json: _home2.default,
+  json: _homeSection2.default,
   method: 'GET'
 }, {
   id: 6,
@@ -26374,9 +26374,18 @@ var App = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        null,
-        _react2.default.createElement(_header2.default, null),
-        _react2.default.createElement(_main2.default, { apiMeta: this.props.apiMeta })
+        { className: 'page-container' },
+        _react2.default.createElement(
+          'div',
+          { className: 'detail-container' },
+          'List'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'list-container' },
+          _react2.default.createElement(_header2.default, null),
+          _react2.default.createElement(_main2.default, { apiMeta: this.props.apiMeta })
+        )
       );
     }
   }]);
