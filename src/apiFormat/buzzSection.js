@@ -1,5 +1,3 @@
-
-
 const publisherItem = {
   imageUrl: {
     type: 'String'
@@ -111,7 +109,6 @@ const itemsItem = {
   // }
 }
 
-
 const sectionsItems = {
   id: {
     type: 'String'
@@ -121,7 +118,7 @@ const sectionsItems = {
   },
   items: {
     type: 'Array',
-    value: itemsItem
+    // value: itemsItem
   },
   next: {
     type: 'String'
