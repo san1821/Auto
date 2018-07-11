@@ -1,5 +1,3 @@
-
-
 const publisherItem = {
   imageUrl: {
     type: 'String'

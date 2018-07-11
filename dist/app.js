@@ -26238,8 +26238,6 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-
 var publisherItem = {
   imageUrl: {
     type: 'String'
