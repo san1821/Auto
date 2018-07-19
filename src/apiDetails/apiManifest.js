@@ -4,6 +4,7 @@ import homeBanner from '../apiFormat/homeBanner'
 import homeSection from '../apiFormat/homeSection'
 import buzzSection from '../apiFormat/buzzSection'
 import buzzBanner from '../apiFormat/buzzBanner'
+import MusicVideoDetailPage from '../apiFormat/MusicVideoDetailPage'
 
 var apis = [{
   id: 1,
@@ -76,7 +77,7 @@ var apis = [{
   json: homeSection,
   method: 'GET'
 },{
-  id: 6,
+  id: 8,
   displayName: 'Browse Banners',
   url: 'https://api.dev.mxplay.com/v1/home/banners/4',
   // params: {
@@ -86,7 +87,7 @@ var apis = [{
   json: homeBanner,
   method: 'GET'
 },{
-  id: 7,
+  id: 9,
   displayName: 'Browse Sections',
   url: 'https://api.dev.mxplay.com/v1/home/tab/4',
   // params: {
@@ -96,7 +97,7 @@ var apis = [{
   json: homeSection,
   method: 'GET'
 },{
-  id: 6,
+  id: 10,
   displayName: 'Shows Banners',
   url: 'https://api.dev.mxplay.com/v1/home/banners/5',
   // params: {
@@ -106,7 +107,7 @@ var apis = [{
   json: homeBanner,
   method: 'GET'
 },{
-  id: 7,
+  id: 11,
   displayName: 'Shows Sections',
   url: 'https://api.dev.mxplay.com/v1/home/tab/5',
   // params: {
@@ -116,7 +117,7 @@ var apis = [{
   json: homeSection,
   method: 'GET'
 },{
-  id: 6,
+  id: 12,
   displayName: 'Movie Banners',
   url: 'https://api.dev.mxplay.com/v1/home/banners/6',
   // params: {
@@ -126,14 +127,24 @@ var apis = [{
   json: homeBanner,
   method: 'GET'
 },{
-  id: 7,
+  id: 13,
   displayName: 'Movie Sections',
-  url: 'https://api.dev.mxplay.com/v1/home/tab/6',
+  url: 'https://api.mxplay.com/v1/home/tab/6',
   // params: {
   //   tab: 1
   // },
   cookies: "userId=123",
   json: homeSection,
+  method: 'GET'
+},{
+  id: 14,
+  displayName: 'VideoDetailPage',
+  url: 'https://api.mxplay.com/v1/detail/video?type=music&id=09f3b8228d754fd3325b0a6584173120',
+  // params: {
+  //   tab: 1
+  // },
+  cookies: "userId=123",
+  json: MusicVideoDetailPage,
   method: 'GET'
 }]
 

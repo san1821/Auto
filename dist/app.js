@@ -25740,6 +25740,10 @@ var _buzzBanner = __webpack_require__(/*! ../apiFormat/buzzBanner */ "./src/apiF
 
 var _buzzBanner2 = _interopRequireDefault(_buzzBanner);
 
+var _MusicVideoDetailPage = __webpack_require__(/*! ../apiFormat/MusicVideoDetailPage */ "./src/apiFormat/MusicVideoDetailPage.js");
+
+var _MusicVideoDetailPage2 = _interopRequireDefault(_MusicVideoDetailPage);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var apis = [{
@@ -25813,7 +25817,7 @@ var apis = [{
   json: _homeSection2.default,
   method: 'GET'
 }, {
-  id: 6,
+  id: 8,
   displayName: 'Browse Banners',
   url: 'https://api.dev.mxplay.com/v1/home/banners/4',
   // params: {
@@ -25823,7 +25827,7 @@ var apis = [{
   json: _homeBanner2.default,
   method: 'GET'
 }, {
-  id: 7,
+  id: 9,
   displayName: 'Browse Sections',
   url: 'https://api.dev.mxplay.com/v1/home/tab/4',
   // params: {
@@ -25833,7 +25837,7 @@ var apis = [{
   json: _homeSection2.default,
   method: 'GET'
 }, {
-  id: 6,
+  id: 10,
   displayName: 'Shows Banners',
   url: 'https://api.dev.mxplay.com/v1/home/banners/5',
   // params: {
@@ -25843,7 +25847,7 @@ var apis = [{
   json: _homeBanner2.default,
   method: 'GET'
 }, {
-  id: 7,
+  id: 11,
   displayName: 'Shows Sections',
   url: 'https://api.dev.mxplay.com/v1/home/tab/5',
   // params: {
@@ -25853,7 +25857,7 @@ var apis = [{
   json: _homeSection2.default,
   method: 'GET'
 }, {
-  id: 6,
+  id: 12,
   displayName: 'Movie Banners',
   url: 'https://api.dev.mxplay.com/v1/home/banners/6',
   // params: {
@@ -25863,18 +25867,211 @@ var apis = [{
   json: _homeBanner2.default,
   method: 'GET'
 }, {
-  id: 7,
+  id: 13,
   displayName: 'Movie Sections',
-  url: 'https://api.dev.mxplay.com/v1/home/tab/6',
+  url: 'https://api.mxplay.com/v1/home/tab/6',
   // params: {
   //   tab: 1
   // },
   cookies: "userId=123",
   json: _homeSection2.default,
   method: 'GET'
+}, {
+  id: 14,
+  displayName: 'VideoDetailPage',
+  url: 'https://api.mxplay.com/v1/detail/video?type=music&id=09f3b8228d754fd3325b0a6584173120',
+  // params: {
+  //   tab: 1
+  // },
+  cookies: "userId=123",
+  json: _MusicVideoDetailPage2.default,
+  method: 'GET'
 }];
 
 module.exports = apis;
+
+/***/ }),
+
+/***/ "./src/apiFormat/MusicVideoDetailPage.js":
+/*!***********************************************!*\
+  !*** ./src/apiFormat/MusicVideoDetailPage.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var contributorsItem = {
+  name: {
+    type: 'String'
+  },
+  role: {
+    type: 'String'
+  },
+  type: {
+    type: 'String'
+  },
+  id: {
+    type: 'String'
+  }
+};
+
+var tabsItems = {
+  title: {
+    type: 'String'
+  },
+  style: {
+    type: 'String'
+  },
+  type: {
+    type: 'String'
+  },
+  api: {
+    type: 'String'
+  },
+  contributors: {
+    type: 'String'
+  }
+};
+var dashItem = {
+  high: {
+    type: 'String'
+  },
+  base: {
+    type: 'String'
+  },
+  main: {
+    type: 'String'
+  }
+};
+
+var hlsItem = {
+  high: {
+    type: 'String'
+  },
+  base: {
+    type: 'String'
+  },
+  main: {
+    type: 'String'
+  }
+};
+
+var containerItem = {
+  title: {
+    type: 'String'
+  },
+  type: {
+    type: 'String'
+  },
+  sequence: {
+    type: 'Number'
+  },
+  id: {
+    type: 'String'
+  },
+  container: {
+    type: 'String'
+  }
+};
+
+var StreamItem = {
+  dash: {
+    type: 'object',
+    value: dashItem
+  },
+  hls: {
+    type: 'object',
+    value: hlsItem
+  }
+};
+
+var publisherItem = {
+  name: {
+    type: 'String'
+  },
+  videoCount: {
+    type: 'Number'
+  },
+  subscriptionsCount: {
+    type: 'Number'
+  },
+  id: {
+    type: 'String'
+  },
+  image: {
+    type: 'Number' // need to add
+  }
+};
+
+exports.default = {
+  duration: {
+    type: 'Number'
+  },
+  title: {
+    type: 'String'
+  },
+  publishTime: {
+    type: 'Number'
+  },
+  Stream: {
+    type: 'object',
+    value: StreamItem
+  },
+  sequence: {
+    type: 'Number'
+  },
+  type: {
+    type: 'String'
+  },
+  publisher: {
+    type: 'object',
+    value: publisherItem
+  },
+  description: {
+    type: 'String'
+  },
+  rating: {
+    type: 'String'
+  },
+  shareUrl: {
+    type: 'String'
+  },
+  downloadUrl: {
+    type: 'String'
+  },
+  id: {
+    type: 'String'
+  },
+  languages: {
+    type: 'Array'
+    // value: languagesItem
+  },
+  genres: {
+    type: 'Array'
+    // value: genresItem
+  },
+  image: {
+    type: 'object'
+    // value: imageItem
+  },
+  container: {
+    type: 'object',
+    value: containerItem
+  },
+  tabs: {
+    type: 'Array',
+    value: tabsItems
+  },
+  contributors: {
+    type: 'Array',
+    value: contributorsItem
+  }
+};
 
 /***/ }),
 
@@ -26464,25 +26661,34 @@ function makeAPICall(selectedAPI, dispatch) {
       Cookie: selectedAPI.cookies
     },
     withCredentials: true
-  }).then(function (_ref) {
-    var data = _ref.data;
-
-    testJSONStructure(selectedAPI.json, data).then(function (_ref2) {
-      var finalResult = _ref2.finalResult,
-          errorResult = _ref2.errorResult;
+  }).then(function (result) {
+    var status = result.status;
+    var data = result.data;
+    testJSONStructure(selectedAPI.json, data).then(function (_ref) {
+      var finalResult = _ref.finalResult,
+          errorResult = _ref.errorResult;
 
       dispatch({
         type: 'TESTS_RUN',
         payload: {
           id: selectedAPI.id,
           result: {
-            finalResult: finalResult, errorResult: errorResult
+            finalResult: finalResult, errorResult: errorResult, status: status
           }
         }
       });
     });
   }).catch(function (err) {
-    console.log(err);
+    var status = err.status;
+    dispatch({
+      type: 'TESTS_RUN',
+      payload: {
+        id: selectedAPI.id,
+        result: {
+          status: status
+        }
+      }
+    });
   });
 }
 
@@ -26499,7 +26705,7 @@ function testJSONStructure(json, data) {
 function parseJSON(json, data, path, result, errorResult) {
   for (var key in json) {
     // Check if key exists
-    var keyExists = data[key] ? true : false;
+    var keyExists = data[key] || data[key] === 0 ? true : false;
     result[key] = {
       data: data[key],
       found: keyExists,
@@ -26856,6 +27062,11 @@ var APIStructureTester = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'column' },
+                'API Status'
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'column' },
                 'API Method'
               ),
               _react2.default.createElement(
@@ -26944,6 +27155,11 @@ var API = function (_React$Component2) {
         _react2.default.createElement(
           'div',
           { className: 'column' },
+          this.props.response && this.props.response.status
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'column' },
           this.props.apidata.method
         ),
         _react2.default.createElement(
@@ -26975,6 +27191,12 @@ var API = function (_React$Component2) {
           _react2.default.createElement(
             'div',
             { className: 'result-tab-container ' + this.state.tab },
+            this.props.response && this.props.response.status && _react2.default.createElement(
+              'div',
+              null,
+              'Status Code: ',
+              this.props.response.status
+            ),
             this.props.response && this.props.response.finalResult && _react2.default.createElement(ResultFormatter, { data: this.props.response.finalResult }),
             this.props.response && this.props.response.errorResult && _react2.default.createElement(ErrorResult, { data: this.props.response.errorResult })
           )
