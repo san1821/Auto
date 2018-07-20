@@ -30,6 +30,7 @@ class APIStructureTester extends React.Component {
               <div className='column'>API Name</div>
               <div className='column'>API URL</div>
               <div className='column'>API Params</div>
+              <div className='column'>API Status</div>
               <div className='column'>API Method</div>
               <div className='column'>
                 <button className='run-test-btn' onClick={this.runAll}>Run All Tests</button>
@@ -79,6 +80,7 @@ class API extends React.Component {
         <div className='column'>{this.props.apidata.displayName}</div>
         <div className='column'>{this.props.apidata.url}</div>
         <div className='column'>{JSON.stringify(this.props.apidata.params)}</div>
+        <div className='column'>{this.props.response && this.props.response.status}</div>
         <div className='column'>{this.props.apidata.method}</div>
         <div className='column'>
           <button className='run-test-btn' onClick={this.runTest}>Run Test</button>
@@ -90,6 +92,9 @@ class API extends React.Component {
               <div className={`tab-header ${this.state.tab === 'all' ? 'active': ''}`} onClick={this.all}>All</div>
             </div>
             <div className={`result-tab-container ${this.state.tab}`}>
+              { this.props.response && this.props.response.status &&
+                  <div>Status Code: {this.props.response.status}</div>
+              }
               { this.props.response && this.props.response.finalResult &&
                 <ResultFormatter data={this.props.response.finalResult} />
               }

@@ -24,20 +24,31 @@ function makeAPICall(selectedAPI, dispatch) {
       Cookie: selectedAPI.cookies
     },
     withCredentials: true
-  }).then(({data}) => {
+  }).then((result) => {
+    const status = result.status
+    const data = result.data
     testJSONStructure(selectedAPI.json, data).then(({finalResult, errorResult}) => {
       dispatch({
         type: 'TESTS_RUN',
         payload: {
           id: selectedAPI.id,
           result: {
-            finalResult, errorResult
+            finalResult, errorResult, status
           }
         }
       })
     })
   }).catch((err) => {
-    console.log(err)
+    const status = err.status
+    dispatch({
+      type: 'TESTS_RUN',
+      payload: {
+        id: selectedAPI.id,
+        result: {
+          status
+        }
+      }
+    })
   })  
 }
 
@@ -54,7 +65,7 @@ function testJSONStructure (json, data) {
 function parseJSON (json, data, path, result, errorResult) {
   for (let key in json) {
     // Check if key exists
-    const keyExists = data[key] ? true : false
+    const keyExists = ( data[key] || data[key] === 0 ) ? true : false
     result[key] = {
       data: data[key],
       found: keyExists,
