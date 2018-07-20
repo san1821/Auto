@@ -1,5 +1,3 @@
-
-
 const publisherItem = {
   imageUrl: {
     type: 'String'
@@ -22,13 +20,13 @@ const containerItem = {
   type: {
     type: 'String'
   },
-  // sequence: {
-  //   type: ''
-  // },
+  sequence: {
+    type: 'Number'
+  },
   id: {
     type: 'String'
   }
-  // container: {
+  // container: {.            // optional
   //   type: ''
   // }
 }
@@ -104,11 +102,11 @@ const itemsItem = {
   },
   genres: {
     type: 'Array'                              // add data
-  },
-  container: {
-    type: 'Object',
-    value: containerItem                           // add data
   }
+  // container: {
+  //   type: 'Object',
+  //   value: containerItem                       // optional
+  // }
 }
 
 

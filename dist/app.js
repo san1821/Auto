@@ -25732,11 +25732,23 @@ var _homeSection = __webpack_require__(/*! ../apiFormat/homeSection */ "./src/ap
 
 var _homeSection2 = _interopRequireDefault(_homeSection);
 
+var _buzzSection = __webpack_require__(/*! ../apiFormat/buzzSection */ "./src/apiFormat/buzzSection.js");
+
+var _buzzSection2 = _interopRequireDefault(_buzzSection);
+
+var _buzzBanner = __webpack_require__(/*! ../apiFormat/buzzBanner */ "./src/apiFormat/buzzBanner.js");
+
+var _buzzBanner2 = _interopRequireDefault(_buzzBanner);
+
+var _MusicVideoDetailPage = __webpack_require__(/*! ../apiFormat/MusicVideoDetailPage */ "./src/apiFormat/MusicVideoDetailPage.js");
+
+var _MusicVideoDetailPage2 = _interopRequireDefault(_MusicVideoDetailPage);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var apis = [{
   id: 1,
-  displayName: 'Home page - List of Tabs',
+  displayName: 'List of Tabs',
   url: 'https://api.dev.mxplay.com/v1/home/tabs',
   // params: {
   //   tab: 1
@@ -25746,7 +25758,7 @@ var apis = [{
   method: 'GET'
 }, {
   id: 2,
-  displayName: 'Home page - Home Banners',
+  displayName: 'Home Banners',
   url: 'https://api.dev.mxplay.com/v1/home/banners/1',
   // params: {
   //   tab: 1
@@ -25756,7 +25768,7 @@ var apis = [{
   method: 'GET'
 }, {
   id: 3,
-  displayName: 'Home page - Home Sections',
+  displayName: 'Home Sections',
   url: 'https://api.dev.mxplay.com/v1/home/tab/1',
   // params: {
   //   tab: 1
@@ -25766,47 +25778,493 @@ var apis = [{
   method: 'GET'
 }, {
   id: 4,
-  displayName: 'Home page - Buzz Banners',
-  url: 'https://api.dev.mxplay.com/v1/home/banners/',
+  displayName: 'Buzz Banners',
+  url: 'https://api.dev.mxplay.com/v1/home/banners/2',
   // params: {
   //   tab: 1
   // },
   cookies: "userId=123",
-  json: _home2.default,
+  json: _homeBanner2.default,
   method: 'GET'
 }, {
   id: 5,
-  displayName: 'Home page - Buzz Sections',
+  displayName: 'Buzz Sections',
   url: 'https://api.dev.mxplay.com/v1/home/tab/2',
   // params: {
   //   tab: 1
   // },
   cookies: "userId=123",
-  json: _home2.default,
+  json: _homeSection2.default,
   method: 'GET'
 }, {
   id: 6,
-  displayName: 'Home page - Shorts Banners',
+  displayName: 'Music Banners',
   url: 'https://api.dev.mxplay.com/v1/home/banners/3',
   // params: {
   //   tab: 1
   // },
   cookies: "userId=123",
-  json: _home2.default,
+  json: _homeBanner2.default,
   method: 'GET'
 }, {
   id: 7,
-  displayName: 'Home page - Shorts Sections',
+  displayName: 'Music Sections',
   url: 'https://api.dev.mxplay.com/v1/home/tab/3',
   // params: {
   //   tab: 1
   // },
   cookies: "userId=123",
-  json: _home2.default,
+  json: _homeSection2.default,
+  method: 'GET'
+}, {
+  id: 8,
+  displayName: 'Browse Banners',
+  url: 'https://api.dev.mxplay.com/v1/home/banners/4',
+  // params: {
+  //   tab: 1
+  // },
+  cookies: "userId=123",
+  json: _homeBanner2.default,
+  method: 'GET'
+}, {
+  id: 9,
+  displayName: 'Browse Sections',
+  url: 'https://api.dev.mxplay.com/v1/home/tab/4',
+  // params: {
+  //   tab: 1
+  // },
+  cookies: "userId=123",
+  json: _homeSection2.default,
+  method: 'GET'
+}, {
+  id: 10,
+  displayName: 'Shows Banners',
+  url: 'https://api.dev.mxplay.com/v1/home/banners/5',
+  // params: {
+  //   tab: 1
+  // },
+  cookies: "userId=123",
+  json: _homeBanner2.default,
+  method: 'GET'
+}, {
+  id: 11,
+  displayName: 'Shows Sections',
+  url: 'https://api.dev.mxplay.com/v1/home/tab/5',
+  // params: {
+  //   tab: 1
+  // },
+  cookies: "userId=123",
+  json: _homeSection2.default,
+  method: 'GET'
+}, {
+  id: 12,
+  displayName: 'Movie Banners',
+  url: 'https://api.dev.mxplay.com/v1/home/banners/6',
+  // params: {
+  //   tab: 1
+  // },
+  cookies: "userId=123",
+  json: _homeBanner2.default,
+  method: 'GET'
+}, {
+  id: 13,
+  displayName: 'Movie Sections',
+  url: 'https://api.mxplay.com/v1/home/tab/6',
+  // params: {
+  //   tab: 1
+  // },
+  cookies: "userId=123",
+  json: _homeSection2.default,
+  method: 'GET'
+}, {
+  id: 14,
+  displayName: 'VideoDetailPage',
+  url: 'https://api.mxplay.com/v1/detail/video?type=music&id=09f3b8228d754fd3325b0a6584173120',
+  // params: {
+  //   tab: 1
+  // },
+  cookies: "userId=123",
+  json: _MusicVideoDetailPage2.default,
   method: 'GET'
 }];
 
 module.exports = apis;
+
+/***/ }),
+
+/***/ "./src/apiFormat/MusicVideoDetailPage.js":
+/*!***********************************************!*\
+  !*** ./src/apiFormat/MusicVideoDetailPage.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var contributorsItem = {
+  name: {
+    type: 'String'
+  },
+  role: {
+    type: 'String'
+  },
+  type: {
+    type: 'String'
+  },
+  id: {
+    type: 'String'
+  }
+};
+
+var tabsItems = {
+  title: {
+    type: 'String'
+  },
+  style: {
+    type: 'String'
+  },
+  type: {
+    type: 'String'
+  },
+  api: {
+    type: 'String'
+  },
+  contributors: {
+    type: 'String'
+  }
+};
+var dashItem = {
+  high: {
+    type: 'String'
+  },
+  base: {
+    type: 'String'
+  },
+  main: {
+    type: 'String'
+  }
+};
+
+var hlsItem = {
+  high: {
+    type: 'String'
+  },
+  base: {
+    type: 'String'
+  },
+  main: {
+    type: 'String'
+  }
+};
+
+var containerItem = {
+  title: {
+    type: 'String'
+  },
+  type: {
+    type: 'String'
+  },
+  sequence: {
+    type: 'Number'
+  },
+  id: {
+    type: 'String'
+  },
+  container: {
+    type: 'String'
+  }
+};
+
+var StreamItem = {
+  dash: {
+    type: 'object',
+    value: dashItem
+  },
+  hls: {
+    type: 'object',
+    value: hlsItem
+  }
+};
+
+var publisherItem = {
+  name: {
+    type: 'String'
+  },
+  videoCount: {
+    type: 'Number'
+  },
+  subscriptionsCount: {
+    type: 'Number'
+  },
+  id: {
+    type: 'String'
+  },
+  image: {
+    type: 'Number' // need to add
+  }
+};
+
+exports.default = {
+  duration: {
+    type: 'Number'
+  },
+  title: {
+    type: 'String'
+  },
+  publishTime: {
+    type: 'Number'
+  },
+  Stream: {
+    type: 'object',
+    value: StreamItem
+  },
+  sequence: {
+    type: 'Number'
+  },
+  type: {
+    type: 'String'
+  },
+  publisher: {
+    type: 'object',
+    value: publisherItem
+  },
+  description: {
+    type: 'String'
+  },
+  rating: {
+    type: 'String'
+  },
+  shareUrl: {
+    type: 'String'
+  },
+  downloadUrl: {
+    type: 'String'
+  },
+  id: {
+    type: 'String'
+  },
+  languages: {
+    type: 'Array'
+    // value: languagesItem
+  },
+  genres: {
+    type: 'Array'
+    // value: genresItem
+  },
+  image: {
+    type: 'object'
+    // value: imageItem
+  },
+  container: {
+    type: 'object',
+    value: containerItem
+  },
+  tabs: {
+    type: 'Array',
+    value: tabsItems
+  },
+  contributors: {
+    type: 'Array',
+    value: contributorsItem
+  }
+};
+
+/***/ }),
+
+/***/ "./src/apiFormat/buzzBanner.js":
+/*!*************************************!*\
+  !*** ./src/apiFormat/buzzBanner.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var bannersItems = {
+  subTitle: {
+    type: 'String'
+  },
+  id: {
+    type: 'String'
+  },
+  title: {
+    type: 'String'
+  },
+  poster: {
+    type: 'String'
+  },
+  type: {
+    type: 'String'
+  }
+};
+
+exports.default = {
+  banners: {
+    type: 'Array',
+    value: bannersItems
+  }
+};
+
+/***/ }),
+
+/***/ "./src/apiFormat/buzzSection.js":
+/*!**************************************!*\
+  !*** ./src/apiFormat/buzzSection.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var publisherItem = {
+  imageUrl: {
+    type: 'String'
+  },
+  name: {
+    type: 'String'
+  },
+  videoCount: {
+    type: 'Number'
+  },
+  id: {
+    type: 'String'
+  }
+};
+
+var containerItem = {
+  title: {
+    type: 'String'
+  },
+  type: {
+    type: 'String'
+  },
+  sequence: {
+    type: 'Number'
+  },
+  id: {
+    type: 'String'
+    // container: {.            // optional
+    //   type: ''
+    // }
+  } };
+
+var dashItem = {
+  // high: {
+  //   type: ''
+  // },
+  // base: {
+  //   type: ''
+  // },
+  main: {
+    type: 'String'
+  }
+};
+
+var hlsItem = {
+  // high: {
+  //   type: ''
+  // },
+  // base: {
+  //   type: ''
+  // },
+  main: {
+    type: 'String'
+  }
+};
+
+var streamItem = {
+  dash: {
+    type: 'Object',
+    value: dashItem
+  },
+  hls: {
+    type: 'Object',
+    value: hlsItem
+  }
+};
+
+var itemsItem = {
+  duration: {
+    type: 'Number'
+  },
+  title: {
+    type: 'String'
+  },
+  publishTime: {
+    type: 'Number'
+  },
+  imageUrl: {
+    type: 'String'
+  },
+  stream: {
+    type: 'Object',
+    value: streamItem
+  },
+  sequence: {
+    type: 'Number'
+  },
+  type: {
+    type: 'String'
+  },
+  publisher: {
+    type: 'Object',
+    value: publisherItem
+  },
+  id: {
+    type: 'String' // add data
+  },
+  languages: {
+    type: 'Array' // add data
+  },
+  genres: {
+    type: 'Array' // add data
+
+    // container: {
+    //   type: 'Object',
+    //   value: containerItem                       // optional
+    // }
+  } };
+
+var sectionsItems = {
+  id: {
+    type: 'String'
+  },
+  style: {
+    type: 'String'
+  },
+  items: {
+    type: 'Array'
+    // value: itemsItem
+  },
+  next: {
+    type: 'String'
+  },
+  name: {
+    type: 'String'
+  }
+};
+
+exports.default = {
+  next: {
+    type: 'String'
+  },
+  sections: {
+    type: 'Array',
+    value: sectionsItems
+  }
+};
 
 /***/ }),
 
@@ -25977,8 +26435,6 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-
 var publisherItem = {
   imageUrl: {
     type: 'String'
@@ -26001,12 +26457,12 @@ var containerItem = {
   type: {
     type: 'String'
   },
-  // sequence: {
-  //   type: ''
-  // },
+  sequence: {
+    type: 'Number'
+  },
   id: {
     type: 'String'
-    // container: {
+    // container: {.            // optional
     //   type: ''
     // }
   } };
@@ -26081,12 +26537,12 @@ var itemsItem = {
   },
   genres: {
     type: 'Array' // add data
-  },
-  container: {
-    type: 'Object',
-    value: containerItem // add data
-  }
-};
+
+    // container: {
+    //   type: 'Object',
+    //   value: containerItem                       // optional
+    // }
+  } };
 
 var sectionsItems = {
   id: {
@@ -26205,25 +26661,34 @@ function makeAPICall(selectedAPI, dispatch) {
       Cookie: selectedAPI.cookies
     },
     withCredentials: true
-  }).then(function (_ref) {
-    var data = _ref.data;
-
-    testJSONStructure(selectedAPI.json, data).then(function (_ref2) {
-      var finalResult = _ref2.finalResult,
-          errorResult = _ref2.errorResult;
+  }).then(function (result) {
+    var status = result.status;
+    var data = result.data;
+    testJSONStructure(selectedAPI.json, data).then(function (_ref) {
+      var finalResult = _ref.finalResult,
+          errorResult = _ref.errorResult;
 
       dispatch({
         type: 'TESTS_RUN',
         payload: {
           id: selectedAPI.id,
           result: {
-            finalResult: finalResult, errorResult: errorResult
+            finalResult: finalResult, errorResult: errorResult, status: status
           }
         }
       });
     });
   }).catch(function (err) {
-    console.log(err);
+    var status = err.status;
+    dispatch({
+      type: 'TESTS_RUN',
+      payload: {
+        id: selectedAPI.id,
+        result: {
+          status: status
+        }
+      }
+    });
   });
 }
 
@@ -26240,7 +26705,7 @@ function testJSONStructure(json, data) {
 function parseJSON(json, data, path, result, errorResult) {
   for (var key in json) {
     // Check if key exists
-    var keyExists = data[key] ? true : false;
+    var keyExists = data[key] || data[key] === 0 ? true : false;
     result[key] = {
       data: data[key],
       found: keyExists,
@@ -26597,6 +27062,11 @@ var APIStructureTester = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'column' },
+                'API Status'
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'column' },
                 'API Method'
               ),
               _react2.default.createElement(
@@ -26685,6 +27155,11 @@ var API = function (_React$Component2) {
         _react2.default.createElement(
           'div',
           { className: 'column' },
+          this.props.response && this.props.response.status
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'column' },
           this.props.apidata.method
         ),
         _react2.default.createElement(
@@ -26716,6 +27191,12 @@ var API = function (_React$Component2) {
           _react2.default.createElement(
             'div',
             { className: 'result-tab-container ' + this.state.tab },
+            this.props.response && this.props.response.status && _react2.default.createElement(
+              'div',
+              null,
+              'Status Code: ',
+              this.props.response.status
+            ),
             this.props.response && this.props.response.finalResult && _react2.default.createElement(ResultFormatter, { data: this.props.response.finalResult }),
             this.props.response && this.props.response.errorResult && _react2.default.createElement(ErrorResult, { data: this.props.response.errorResult })
           )
