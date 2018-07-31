@@ -1,3 +1,9 @@
+const imageItems = {
+  '16x9' : {
+    type: 'String'
+  }
+}
+
 const bannersItems = {
   subTitle: {
     type: 'String'
@@ -8,8 +14,9 @@ const bannersItems = {
   title: {
     type: 'String'
   },
-  poster: {
-    type: 'String'
+  image: {
+    type: 'Object',
+    value: imageItems
   },
   type: {
     type: 'String'

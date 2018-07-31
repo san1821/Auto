@@ -25744,22 +25744,26 @@ var _MusicVideoDetailPage = __webpack_require__(/*! ../apiFormat/MusicVideoDetai
 
 var _MusicVideoDetailPage2 = _interopRequireDefault(_MusicVideoDetailPage);
 
+var _browseSection = __webpack_require__(/*! ../apiFormat/browseSection */ "./src/apiFormat/browseSection.js");
+
+var _browseSection2 = _interopRequireDefault(_browseSection);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var apis = [{
   id: 1,
   displayName: 'List of Tabs',
-  url: 'https://api.mxplay.com/v1/home/tabs',
+  url: 'https://api.dev.mxplay.com/v1/home/tabs',
   // params: {
   //   tab: 1
   // },
-  cookies: "userId=123" && "platform=com.mxplay.mobile",
+  cookies: "userId=123;platform=com.mxplay.mobile",
   json: _tabList2.default,
   method: 'GET'
 }, {
   id: 2,
   displayName: 'Home Banners',
-  url: 'https://api.mxplay.com/v1/home/banners/1',
+  url: 'https://api.dev.mxplay.com/v1/home/banners/1',
   // params: {
   //   tab: 1
   // },
@@ -25769,17 +25773,17 @@ var apis = [{
 }, {
   id: 3,
   displayName: 'Home Sections',
-  url: 'https://api.mxplay.com/v1/home/tab/1',
+  url: 'https://api.dev.mxplay.com/v1/home/tab/1',
   // params: {
   //   tab: 1
   // },
   cookies: "userId=123" && "platform=com.mxplay.mobile",
-  json: _homeSection2.default,
+  json: _browseSection2.default,
   method: 'GET'
 }, {
   id: 4,
   displayName: 'Buzz Banners',
-  url: 'https://api.mxplay.com/v1/home/banners/2',
+  url: 'https://api.dev.mxplay.com/v1/home/banners/2',
   // params: {
   //   tab: 1
   // },
@@ -25789,17 +25793,17 @@ var apis = [{
 }, {
   id: 5,
   displayName: 'Buzz Sections',
-  url: 'https://api.mxplay.com/v1/home/tab/2',
+  url: 'https://api.dev.mxplay.com/v1/home/tab/2',
   // params: {
   //   tab: 1
   // },
   cookies: "userId=123" && "platform=com.mxplay.mobile",
-  json: _homeSection2.default,
+  json: _browseSection2.default,
   method: 'GET'
 }, {
   id: 6,
   displayName: 'Music Banners',
-  url: 'https://api.mxplay.com/v1/home/banners/3',
+  url: 'https://api.dev.mxplay.com/v1/home/banners/3',
   // params: {
   //   tab: 1
   // },
@@ -25809,17 +25813,17 @@ var apis = [{
 }, {
   id: 7,
   displayName: 'Music Sections',
-  url: 'https://api.mxplay.com/v1/home/tab/3',
+  url: 'https://api.dev.mxplay.com/v1/home/tab/3',
   // params: {
   //   tab: 1
   // },
   cookies: "userId=123" && "platform=com.mxplay.mobile",
-  json: _homeSection2.default,
+  json: _browseSection2.default,
   method: 'GET'
 }, {
   id: 8,
   displayName: 'Browse Banners',
-  url: 'https://api.mxplay.com/v1/home/banners/4',
+  url: 'https://api.dev.mxplay.com/v1/home/banners/4',
   // params: {
   //   tab: 1
   // },
@@ -25829,17 +25833,17 @@ var apis = [{
 }, {
   id: 9,
   displayName: 'Browse Sections',
-  url: 'https://api.mxplay.com/v1/home/tab/4',
+  url: 'https://api.dev.mxplay.com/v1/home/tab/4',
   // params: {
   //   tab: 1
   // },
   cookies: "userId=123",
-  json: _homeSection2.default,
+  json: _browseSection2.default,
   method: 'GET'
 }, {
   id: 10,
   displayName: 'Shows Banners',
-  url: 'https://api.mxplay.com/v1/home/banners/5',
+  url: 'https://api.dev.mxplay.com/v1/home/banners/5',
   // params: {
   //   tab: 1
   // },
@@ -25849,17 +25853,17 @@ var apis = [{
 }, {
   id: 11,
   displayName: 'Shows Sections',
-  url: 'https://api.mxplay.com/v1/home/tab/5',
+  url: 'https://api.dev.mxplay.com/v1/home/tab/5',
   // params: {
   //   tab: 1
   // },
   cookies: "userId=123",
-  json: _homeSection2.default,
+  json: _browseSection2.default,
   method: 'GET'
 }, {
   id: 12,
   displayName: 'Movie Banners',
-  url: 'https://api.mxplay.com/v1/home/banners/6',
+  url: 'https://api.dev.mxplay.com/v1/home/banners/6',
   // params: {
   //   tab: 1
   // },
@@ -25869,23 +25873,24 @@ var apis = [{
 }, {
   id: 13,
   displayName: 'Movie Sections',
-  url: 'https://api.mxplay.com/v1/home/tab/6',
+  url: 'https://api.dev.mxplay.com/v1/home/tab/6',
   // params: {
   //   tab: 1
   // },
   cookies: "userId=123",
-  json: _homeSection2.default,
+  json: _browseSection2.default,
   method: 'GET'
-}, {
-  id: 14,
-  displayName: 'VideoDetailPage',
-  url: 'https://api.mxplay.com/v1/detail/video?type=music&id=09f3b8228d754fd3325b0a6584173120',
-  // params: {
-  //   tab: 1
-  // },
-  cookies: "userId=123",
-  json: _MusicVideoDetailPage2.default,
-  method: 'GET'
+  // ,{
+  //   id: 14,
+  //   displayName: 'VideoDetailPage',
+  //   url: 'https://api.dev.mxplay.com/v1/detail/video?type=music&id=09f3b8228d754fd3325b0a6584173120',
+  //   // params: {
+  //   //   tab: 1
+  //   // },
+  //   cookies: "userId=123",
+  //   json: MusicVideoDetailPage,
+  //   method: 'GET'
+  // }
 }];
 
 module.exports = apis;
@@ -26075,6 +26080,188 @@ exports.default = {
 
 /***/ }),
 
+/***/ "./src/apiFormat/browseSection.js":
+/*!****************************************!*\
+  !*** ./src/apiFormat/browseSection.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var imageItems = {
+  '16x9': {
+    type: 'String'
+  },
+  '1x1': {
+    type: 'String'
+  }
+};
+
+var publisherItem = {
+  name: {
+    type: 'String'
+  },
+  videoCount: {
+    type: 'Number'
+  },
+  subscriptionsCount: {
+    type: 'Number'
+  },
+  id: {
+    type: 'String'
+  },
+  image: {
+    type: 'Object',
+    value: imageItems
+  }
+};
+
+var containerItem = {
+  title: {
+    type: 'String'
+  },
+  type: {
+    type: 'String'
+  },
+  sequence: {
+    type: 'Number'
+  },
+  id: {
+    type: 'String'
+    // container: {.            // optional
+    //   type: ''
+    // }
+  } };
+
+var dashItem = {
+  // high: {
+  //   type: ''
+  // },
+  // base: {
+  //   type: ''
+  // },
+  main: {
+    type: 'String'
+  }
+};
+
+var hlsItem = {
+  // high: {
+  //   type: ''
+  // },
+  // base: {
+  //   type: ''
+  // },
+  main: {
+    type: 'String'
+  }
+};
+
+var streamItem = {
+  provider: {
+    type: 'String'
+  },
+  dash: {
+    type: 'Object',
+    value: dashItem
+  },
+  hls: {
+    type: 'Object',
+    value: hlsItem
+  },
+  youtube: {
+    type: 'String'
+  }
+};
+
+var itemsItem = {
+  duration: {
+    type: 'Number'
+  },
+  title: {
+    type: 'String'
+  },
+  publishTime: {
+    type: 'Number'
+  },
+  stream: {
+    type: 'Object',
+    value: streamItem
+  },
+  sequence: {
+    type: 'Number'
+  },
+  type: {
+    type: 'String'
+  },
+  publisher: {
+    type: 'Object',
+    value: publisherItem
+  },
+  childCount: {
+    type: 'Number'
+  },
+  videoCount: {
+    type: 'Number'
+  },
+  id: {
+    type: 'String' // add data
+  },
+  languages: {
+    type: 'Array' // add data
+  },
+  genres: {
+    type: 'Array' // add data
+  },
+  image: {
+    type: 'Object',
+    value: imageItems
+  },
+  container: {
+    type: 'Object',
+    value: containerItem // optional
+  },
+  contributors: {
+    type: 'Array' // Add data
+  }
+};
+
+var sectionsItems = {
+  id: {
+    type: 'String'
+  },
+  style: {
+    type: 'String'
+  },
+  items: {
+    type: 'Array',
+    value: itemsItem
+  },
+  next: {
+    type: 'String'
+  },
+  name: {
+    type: 'String'
+  }
+};
+
+exports.default = {
+  next: {
+    type: 'String'
+  },
+  sections: {
+    type: 'Array',
+    value: sectionsItems
+  }
+};
+
+/***/ }),
+
 /***/ "./src/apiFormat/buzzBanner.js":
 /*!*************************************!*\
   !*** ./src/apiFormat/buzzBanner.js ***!
@@ -26088,6 +26275,12 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+var imageItems = {
+  '16x9': {
+    type: 'String'
+  }
+};
+
 var bannersItems = {
   subTitle: {
     type: 'String'
@@ -26098,8 +26291,9 @@ var bannersItems = {
   title: {
     type: 'String'
   },
-  poster: {
-    type: 'String'
+  image: {
+    type: 'Object',
+    value: imageItems
   },
   type: {
     type: 'String'
@@ -26346,8 +26540,6 @@ var section = {
   style: {
     type: 'Enum',
     possibleValues: ['pic_left', 'slide']
-    // type: 'Constant',
-    // expectedValue: 'slide'
   },
   name: {
     type: 'String'
@@ -26395,6 +26587,12 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+var imageItems = {
+  '16x9': {
+    type: 'String'
+  }
+};
+
 var bannersItems = {
   subTitle: {
     type: 'String'
@@ -26405,8 +26603,9 @@ var bannersItems = {
   title: {
     type: 'String'
   },
-  poster: {
-    type: 'String'
+  image: {
+    type: 'Object',
+    value: imageItems
   },
   type: {
     type: 'String'
@@ -27057,16 +27256,6 @@ var APIStructureTester = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'column' },
-                'API Params'
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'column' },
-                'API Status'
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'column' },
                 'API Method'
               ),
               _react2.default.createElement(
@@ -27077,6 +27266,16 @@ var APIStructureTester = function (_React$Component) {
                   { className: 'run-test-btn', onClick: this.runAll },
                   'Run All Tests'
                 )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'column' },
+                'API Status Code'
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'column' },
+                'API Status'
               )
             ),
             data
@@ -27150,16 +27349,6 @@ var API = function (_React$Component2) {
         _react2.default.createElement(
           'div',
           { className: 'column' },
-          JSON.stringify(this.props.apidata.params)
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'column' },
-          this.props.response && this.props.response.status
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'column' },
           this.props.apidata.method
         ),
         _react2.default.createElement(
@@ -27170,6 +27359,11 @@ var API = function (_React$Component2) {
             { className: 'run-test-btn', onClick: this.runTest },
             'Run Test'
           )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'column' },
+          this.props.response && this.props.response.status
         ),
         this.props.response && _react2.default.createElement(
           'div',
@@ -27191,12 +27385,6 @@ var API = function (_React$Component2) {
           _react2.default.createElement(
             'div',
             { className: 'result-tab-container ' + this.state.tab },
-            this.props.response && this.props.response.status && _react2.default.createElement(
-              'div',
-              null,
-              'Status Code: ',
-              this.props.response.status
-            ),
             this.props.response && this.props.response.finalResult && _react2.default.createElement(ResultFormatter, { data: this.props.response.finalResult }),
             this.props.response && this.props.response.errorResult && _react2.default.createElement(ErrorResult, { data: this.props.response.errorResult })
           )

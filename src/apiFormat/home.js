@@ -63,8 +63,6 @@ const section = {
   style: {
     type: 'Enum',
     possibleValues: ['pic_left', 'slide'],
-    // type: 'Constant',
-    // expectedValue: 'slide'
   },
   name: {
     type: 'String'
