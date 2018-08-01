@@ -1,15 +1,28 @@
-const publisherItem = {
-  imageUrl: {
+const imageItems = {
+  '16x9': {
     type: 'String'
   },
+  '1x1': {
+    type: 'String'
+  }
+}
+
+const publisherItem = {
   name: {
     type: 'String'
   },
   videoCount: {
     type: 'Number'
   },
+  subscriptionsCount: {
+    type: 'Number'
+  },
   id: {
     type: 'String'
+  },
+  image: {
+    type: 'Object',
+    value: imageItems
   }
 }
 
@@ -57,6 +70,9 @@ const hlsItem = {
 
 
 const streamItem = {
+  provider: {
+    type: 'String'
+  },
   dash: {
     type: 'Object',
     value: dashItem
@@ -64,6 +80,9 @@ const streamItem = {
   hls: {
     type: 'Object',
     value: hlsItem
+  },
+  youtube: {
+    type: 'String'
   }
 }
 
@@ -76,9 +95,6 @@ const itemsItem = {
   },
   publishTime: {
     type: 'Number'
-  },
-  imageUrl: {
-    type: 'String'
   },
   stream: {
     type: 'Object',
@@ -94,6 +110,12 @@ const itemsItem = {
     type: 'Object',
     value: publisherItem
   },
+  childCount: {
+    type: 'Number'
+  },
+  videoCount: {
+    type: 'Number'
+  },
   id: {
     type: 'String'                              // add data
   },
@@ -102,11 +124,18 @@ const itemsItem = {
   },
   genres: {
     type: 'Array'                              // add data
+  },
+  image: {
+    type: 'Object',
+    value: imageItems
+  },
+  container: {
+    type: 'Object',
+    value: containerItem                       // optional
+  },
+  contributors: {
+    type: 'Array'                             // Add data
   }
-  // container: {
-  //   type: 'Object',
-  //   value: containerItem                       // optional
-  // }
 }
 
 
