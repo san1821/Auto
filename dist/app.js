@@ -26016,7 +26016,9 @@ var containerItem = {
     type: 'String'
   },
   container: {
-    type: 'String'
+    type: 'Constant',
+    value: 'Mxplay '
+
   }
 };
 
@@ -26063,13 +26065,16 @@ exports.default = {
   title: {
     type: 'String'
   },
+
   publishTime: {
     type: 'Number'
   },
+
   stream: {
     type: 'Object',
     value: StreamItem
   },
+
   sequence: {
     type: 'Number'
   },
@@ -26916,6 +26921,10 @@ var _header = __webpack_require__(/*! ./header */ "./src/js/header.js");
 
 var _header2 = _interopRequireDefault(_header);
 
+var _sidebar = __webpack_require__(/*! ./sidebar */ "./src/js/sidebar.js");
+
+var _sidebar2 = _interopRequireDefault(_sidebar);
+
 var _main = __webpack_require__(/*! ./main */ "./src/js/main.js");
 
 var _main2 = _interopRequireDefault(_main);
@@ -26942,9 +26951,8 @@ var App = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        null,
-        _react2.default.createElement(_header2.default, null),
-        _react2.default.createElement(_main2.default, { apiMeta: this.props.apiMeta })
+        { className: 'main-container' },
+        _react2.default.createElement(_sidebar2.default, null)
       );
     }
   }]);
@@ -27494,6 +27502,75 @@ exports.default = {
     return newState;
   }
 };
+
+/***/ }),
+
+/***/ "./src/js/sidebar.js":
+/*!***************************!*\
+  !*** ./src/js/sidebar.js ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Sidebar = function (_React$Component) {
+  _inherits(Sidebar, _React$Component);
+
+  function Sidebar() {
+    _classCallCheck(this, Sidebar);
+
+    return _possibleConstructorReturn(this, (Sidebar.__proto__ || Object.getPrototypeOf(Sidebar)).apply(this, arguments));
+  }
+
+  _createClass(Sidebar, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'sidebar' },
+        _react2.default.createElement(
+          'div',
+          { className: 'main-header' },
+          'API CHECKER'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'sidebar-item' },
+          'Normal APIs'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'sidebar-item' },
+          'Paginated APIs'
+        )
+      );
+    }
+  }]);
+
+  return Sidebar;
+}(_react2.default.Component);
+
+exports.default = Sidebar;
 
 /***/ })
 

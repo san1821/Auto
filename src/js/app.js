@@ -2,14 +2,15 @@
 import { connect } from 'react-redux'
 
 import Header from './header'
+import SideBar from './sidebar'
+
 import APIStructureTester from './main'
 
 class App extends React.Component {
   render () {
     return (
-      <div>
-        <Header />
-        <APIStructureTester apiMeta={this.props.apiMeta} />
+      <div className='main-container'>
+        <SideBar />
       </div>
     )
   }

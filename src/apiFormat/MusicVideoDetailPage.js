@@ -111,7 +111,9 @@ const containerItem = {
     type: 'String'
   },
   container: {
-    type: 'String'
+    type: 'Constant',
+    value: 'Mxplay '
+
   }
 }
 
@@ -159,13 +161,19 @@ export default {
   title: {
     type: 'String'
   },
+
+
   publishTime:{
     type: 'Number'
   },
+
   stream: {
     type: 'Object',
     value: StreamItem
   },
+
+
+
   sequence: {
     type: 'Number'
   },
