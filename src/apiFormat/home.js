@@ -98,6 +98,8 @@ export default {
 // type: 'Constant',
 // expectedValue: 'slide'
 
+//// import { abc, def, ghi } from './something'
+
 
 // const types = [ 'Array', 'Object', 'String', 'Number', 'Constant', 'Enum' ]
 
