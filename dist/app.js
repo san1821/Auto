@@ -25732,21 +25732,13 @@ var _homeSection = __webpack_require__(/*! ../apiFormat/homeSection */ "./src/ap
 
 var _homeSection2 = _interopRequireDefault(_homeSection);
 
-var _buzzSection = __webpack_require__(/*! ../apiFormat/buzzSection */ "./src/apiFormat/buzzSection.js");
-
-var _buzzSection2 = _interopRequireDefault(_buzzSection);
-
-var _buzzBanner = __webpack_require__(/*! ../apiFormat/buzzBanner */ "./src/apiFormat/buzzBanner.js");
-
-var _buzzBanner2 = _interopRequireDefault(_buzzBanner);
-
 var _MusicVideoDetailPage = __webpack_require__(/*! ../apiFormat/MusicVideoDetailPage */ "./src/apiFormat/MusicVideoDetailPage.js");
 
 var _MusicVideoDetailPage2 = _interopRequireDefault(_MusicVideoDetailPage);
 
-var _browseSection = __webpack_require__(/*! ../apiFormat/browseSection */ "./src/apiFormat/browseSection.js");
+var _tvshowDetailPage = __webpack_require__(/*! ../apiFormat/tvshowDetailPage */ "./src/apiFormat/tvshowDetailPage.js");
 
-var _browseSection2 = _interopRequireDefault(_browseSection);
+var _tvshowDetailPage2 = _interopRequireDefault(_tvshowDetailPage);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -25772,7 +25764,7 @@ var apis = [{
   displayName: 'Home Sections',
   url: 'https://api.dev.mxplay.com/v1/home/tab/1',
   cookies: "userId=123;platform=com.mxplay.mobile",
-  json: _browseSection2.default,
+  json: _homeSection2.default,
   method: 'GET'
 }, {
   id: 4,
@@ -25786,7 +25778,7 @@ var apis = [{
   displayName: 'Buzz Sections',
   url: 'https://api.dev.mxplay.com/v1/home/tab/2',
   cookies: "userId=123;platform=com.mxplay.mobile",
-  json: _browseSection2.default,
+  json: _homeSection2.default,
   method: 'GET'
 }, {
   id: 6,
@@ -25800,7 +25792,7 @@ var apis = [{
   displayName: 'Music Sections',
   url: 'https://api.dev.mxplay.com/v1/home/tab/3',
   cookies: "userId=123;platform=com.mxplay.mobile",
-  json: _browseSection2.default,
+  json: _homeSection2.default,
   method: 'GET'
 }, {
   id: 8,
@@ -25814,7 +25806,7 @@ var apis = [{
   displayName: 'Browse Sections',
   url: 'https://api.dev.mxplay.com/v1/home/tab/4',
   cookies: "userId=123;platform=com.mxplay.mobile",
-  json: _browseSection2.default,
+  json: _homeSection2.default,
   method: 'GET'
 }, {
   id: 10,
@@ -25828,7 +25820,7 @@ var apis = [{
   displayName: 'Shows Sections',
   url: 'https://api.dev.mxplay.com/v1/home/tab/5',
   cookies: "userId=123;platform=com.mxplay.mobile",
-  json: _browseSection2.default,
+  json: _homeSection2.default,
   method: 'GET'
 }, {
   id: 12,
@@ -25842,14 +25834,56 @@ var apis = [{
   displayName: 'Movie Sections',
   url: 'https://api.dev.mxplay.com/v1/home/tab/6',
   cookies: "userId=123;platform=com.mxplay.mobile",
-  json: _browseSection2.default,
+  json: _homeSection2.default,
   method: 'GET'
 }, {
   id: 14,
-  displayName: 'VideoDetailPage',
+  displayName: 'MusicDetailPage',
   url: 'https://api.dev.mxplay.com/v1/detail/video?type=music&id=09f3b8228d754fd3325b0a6584173120',
   cookies: "userId=123;platform=com.mxplay.mobile",
   json: _MusicVideoDetailPage2.default,
+  method: 'GET'
+}, {
+  id: 15,
+  displayName: 'MovieDetailPage',
+  url: 'https://api.dev.mxplay.com/v1/detail/video?type=movie&id=40b909b225b57496e6e1550ff7fe0e70',
+  cookies: "userId=123;platform=com.mxplay.mobile",
+  json: _MusicVideoDetailPage2.default,
+  method: 'GET'
+}, {
+  id: 16,
+  displayName: 'ShortDetailPage',
+  url: 'https://api.dev.mxplay.com/v1/detail/video?type=shorts&id=fcafb2e727325862e08b77f93345a122',
+  cookies: "userId=123;platform=com.mxplay.mobile",
+  json: _MusicVideoDetailPage2.default,
+  method: 'GET'
+}, {
+  id: 17,
+  displayName: 'EpisodeDetailPage',
+  url: 'https://api.dev.mxplay.com/v1/detail/video?type=episode&id=45bacdc37c8c025eb1644cf04657da86',
+  cookies: "userId=123;platform=com.mxplay.mobile",
+  json: _MusicVideoDetailPage2.default,
+  method: 'GET'
+}, {
+  id: 18,
+  displayName: 'tvshowDetailPage',
+  url: 'https://api.dev.mxplay.com/v1/detail/video?type=episode&id=45bacdc37c8c025eb1644cf04657da86',
+  cookies: "userId=123;platform=com.mxplay.mobile",
+  json: _tvshowDetailPage2.default,
+  method: 'GET'
+}, {
+  id: 19,
+  displayName: 'seasonDetailPage',
+  url: 'https://api.dev.mxplay.com/v1/detail/collection?type=season&id=bd4a04179ffee49c9bfa2bd46c01ae04',
+  cookies: "userId=123;platform=com.mxplay.mobile",
+  json: _tvshowDetailPage2.default,
+  method: 'GET'
+}, {
+  id: 20,
+  displayName: 'albumDetailPage',
+  url: 'https://api.dev.mxplay.com/v1/detail/collection?type=season&id=bd4a04179ffee49c9bfa2bd46c01ae04',
+  cookies: "userId=123;platform=com.mxplay.mobile",
+  json: _tvshowDetailPage2.default,
   method: 'GET'
 }];
 
@@ -25870,6 +25904,48 @@ module.exports = apis;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+var imageItems = {
+  '16x9': {
+    type: 'String'
+  },
+  '1x1': {
+    type: 'String'
+  }
+};
+
+var seekThumbnailItems = {
+  total: {
+    type: 'String'
+  },
+  index: {
+    type: 'String'
+  },
+  height: {
+    type: 'String'
+  },
+  Interval: {
+    type: 'String'
+  },
+  width: {
+    type: 'String'
+  },
+  column: {
+    type: 'String'
+  },
+  row: {
+    type: 'String'
+  },
+  url: {
+    type: 'String'
+  },
+  seekThumbnailImagePath: {
+    type: 'String'
+  },
+  big_pic_num: {
+    type: 'String'
+  }
+};
+
 var contributorsItem = {
   name: {
     type: 'String'
@@ -25945,13 +26021,19 @@ var containerItem = {
 };
 
 var StreamItem = {
+  provider: {
+    type: 'String'
+  },
   dash: {
-    type: 'object',
+    type: 'Object',
     value: dashItem
   },
   hls: {
-    type: 'object',
+    type: 'Object',
     value: hlsItem
+  },
+  youtube: {
+    type: 'String'
   }
 };
 
@@ -25969,7 +26051,8 @@ var publisherItem = {
     type: 'String'
   },
   image: {
-    type: 'Number' // need to add
+    type: 'Object',
+    value: imageItems
   }
 };
 
@@ -25983,8 +26066,8 @@ exports.default = {
   publishTime: {
     type: 'Number'
   },
-  Stream: {
-    type: 'object',
+  stream: {
+    type: 'Object',
     value: StreamItem
   },
   sequence: {
@@ -25994,8 +26077,14 @@ exports.default = {
     type: 'String'
   },
   publisher: {
-    type: 'object',
+    type: 'Object',
     value: publisherItem
+  },
+  childCount: {
+    type: 'Number'
+  },
+  videoCount: {
+    type: 'Number'
   },
   description: {
     type: 'String'
@@ -26021,12 +26110,16 @@ exports.default = {
     // value: genresItem
   },
   image: {
-    type: 'object'
-    // value: imageItem
+    type: 'Object',
+    value: imageItems
   },
   container: {
-    type: 'object',
+    type: 'Object',
     value: containerItem
+  },
+  seekThumbnail: {
+    type: 'Array',
+    value: seekThumbnailItems
   },
   tabs: {
     type: 'Array',
@@ -26037,39 +26130,6 @@ exports.default = {
     value: contributorsItem
   }
 };
-
-/***/ }),
-
-/***/ "./src/apiFormat/browseSection.js":
-/*!****************************************!*\
-  !*** ./src/apiFormat/browseSection.js ***!
-  \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/Users/sanjaychaudhari/Desktop/sankatMochan/src/apiFormat/browseSection.js'");
-
-/***/ }),
-
-/***/ "./src/apiFormat/buzzBanner.js":
-/*!*************************************!*\
-  !*** ./src/apiFormat/buzzBanner.js ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/Users/sanjaychaudhari/Desktop/sankatMochan/src/apiFormat/buzzBanner.js'");
-
-/***/ }),
-
-/***/ "./src/apiFormat/buzzSection.js":
-/*!**************************************!*\
-  !*** ./src/apiFormat/buzzSection.js ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/Users/sanjaychaudhari/Desktop/sankatMochan/src/apiFormat/buzzSection.js'");
 
 /***/ }),
 
@@ -26174,6 +26234,8 @@ exports.default = {
   // possibleValues: ['pic_left', 'slide'],
   // type: 'Constant',
   // expectedValue: 'slide'
+
+  //// import { abc, def, ghi } from './something'
 
 
   // const types = [ 'Array', 'Object', 'String', 'Number', 'Constant', 'Enum' ]
@@ -26440,6 +26502,208 @@ exports.default = {
   tabs: {
     type: 'Array',
     value: tabsItems
+  }
+};
+
+/***/ }),
+
+/***/ "./src/apiFormat/tvshowDetailPage.js":
+/*!*******************************************!*\
+  !*** ./src/apiFormat/tvshowDetailPage.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var imageItems = {
+  '16x9': {
+    type: 'String'
+  },
+  '1x1': {
+    type: 'String'
+  }
+};
+
+var contributorsItem = {
+  name: {
+    type: 'String'
+  },
+  role: {
+    type: 'String'
+  },
+  type: {
+    type: 'String'
+  },
+  id: {
+    type: 'String'
+  }
+};
+
+var tabsItems = {
+  title: {
+    type: 'String'
+  },
+  style: {
+    type: 'String'
+  },
+  type: {
+    type: 'String'
+  },
+  api: {
+    type: 'String'
+  },
+  contributors: {
+    type: 'String'
+  }
+};
+var dashItem = {
+  high: {
+    type: 'String'
+  },
+  base: {
+    type: 'String'
+  },
+  main: {
+    type: 'String'
+  }
+};
+
+var hlsItem = {
+  high: {
+    type: 'String'
+  },
+  base: {
+    type: 'String'
+  },
+  main: {
+    type: 'String'
+  }
+};
+
+var containerItem = {
+  title: {
+    type: 'String'
+  },
+  type: {
+    type: 'String'
+  },
+  sequence: {
+    type: 'Number'
+  },
+  id: {
+    type: 'String'
+  },
+  container: {
+    type: 'String'
+  }
+};
+
+var StreamItem = {
+  provider: {
+    type: 'String'
+  },
+  dash: {
+    type: 'Object',
+    value: dashItem
+  },
+  hls: {
+    type: 'Object',
+    value: hlsItem
+  },
+  youtube: {
+    type: 'String'
+  }
+};
+
+var publisherItem = {
+  name: {
+    type: 'String'
+  },
+  videoCount: {
+    type: 'Number'
+  },
+  subscriptionsCount: {
+    type: 'Number'
+  },
+  id: {
+    type: 'String'
+  },
+  image: {
+    type: 'Object',
+    value: imageItems
+  }
+};
+
+exports.default = {
+  duration: {
+    type: 'Number'
+  },
+  title: {
+    type: 'String'
+  },
+  publishTime: {
+    type: 'Number'
+  },
+  stream: {
+    type: 'Object',
+    value: StreamItem
+  },
+  sequence: {
+    type: 'Number'
+  },
+  type: {
+    type: 'String'
+  },
+  publisher: {
+    type: 'Object',
+    value: publisherItem
+  },
+  childCount: {
+    type: 'Number'
+  },
+  videoCount: {
+    type: 'Number'
+  },
+  description: {
+    type: 'String'
+  },
+  rating: {
+    type: 'String'
+  },
+  shareUrl: {
+    type: 'String'
+  },
+  id: {
+    type: 'String'
+  },
+  languages: {
+    type: 'Array'
+    // value: languagesItem
+  },
+  genres: {
+    type: 'Array'
+    // value: genresItem
+  },
+  image: {
+    type: 'Object',
+    value: imageItems
+  },
+  container: {
+    type: 'Object',
+    value: containerItem
+  },
+  tabs: {
+    type: 'Array',
+    value: tabsItems
+  },
+  contributors: {
+    type: 'Array',
+    value: contributorsItem
   }
 };
 

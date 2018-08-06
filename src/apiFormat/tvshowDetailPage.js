@@ -7,40 +7,6 @@ const imageItems = {
   }
 }
 
-const seekThumbnailItems = {
-  total: {
-    type: 'String'
-  },
-  index: {
-    type: 'String'
-  },
-  height: {
-    type: 'String'
-  },
-  Interval: {
-    type: 'String'
-  },
-  width: {
-    type: 'String'
-  },
-  column: {
-    type: 'String'
-  },
-  row: {
-    type: 'String'
-  },
-  url: {
-    type: 'String'
-  },
-  seekThumbnailImagePath: {
-    type: 'String'
-  },
-  big_pic_num: {
-    type: 'String'
-  }
-}
-
-
 const contributorsItem = {
   name: {
     type: 'String'
@@ -190,10 +156,7 @@ export default {
   },
   shareUrl: {
     type: 'String'
-  },  
-  downloadUrl: {
-    type: 'String'
-  },  
+  },   
   id: {
     type: 'String'
   },
@@ -212,10 +175,6 @@ export default {
   container: {
     type: 'Object',
     value: containerItem
-  },
-  seekThumbnail: {
-    type: 'Array',
-    value: seekThumbnailItems
   },
   tabs: {
     type: 'Array',

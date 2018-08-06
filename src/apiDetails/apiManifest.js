@@ -2,11 +2,8 @@ import home from '../apiFormat/home'
 import tabList from '../apiFormat/tabList'
 import homeBanner from '../apiFormat/homeBanner'
 import homeSection from '../apiFormat/homeSection'
-import buzzSection from '../apiFormat/buzzSection'
-import buzzBanner from '../apiFormat/buzzBanner'
 import MusicVideoDetailPage from '../apiFormat/MusicVideoDetailPage'
-import browseSection from '../apiFormat/browseSection'
-
+import tvshowDetailPage from '../apiFormat/tvshowDetailPage'
 
 var apis = [{
   id: 1,
@@ -30,7 +27,7 @@ var apis = [{
   displayName: 'Home Sections',
   url: 'https://api.dev.mxplay.com/v1/home/tab/1',
   cookies: "userId=123;platform=com.mxplay.mobile",
-  json: browseSection,
+  json: homeSection,
   method: 'GET'
 },{
   id: 4,
@@ -44,7 +41,7 @@ var apis = [{
   displayName: 'Buzz Sections',
   url: 'https://api.dev.mxplay.com/v1/home/tab/2',
   cookies: "userId=123;platform=com.mxplay.mobile",
-  json: browseSection,
+  json: homeSection,
   method: 'GET'
 },{
   id: 6,
@@ -58,7 +55,7 @@ var apis = [{
   displayName: 'Music Sections',
   url: 'https://api.dev.mxplay.com/v1/home/tab/3',
   cookies: "userId=123;platform=com.mxplay.mobile",
-  json: browseSection,
+  json: homeSection,
   method: 'GET'
 },{
   id: 8,
@@ -72,7 +69,7 @@ var apis = [{
   displayName: 'Browse Sections',
   url: 'https://api.dev.mxplay.com/v1/home/tab/4',
   cookies: "userId=123;platform=com.mxplay.mobile",
-  json: browseSection,
+  json: homeSection,
   method: 'GET'
 },{
   id: 10,
@@ -86,7 +83,7 @@ var apis = [{
   displayName: 'Shows Sections',
   url: 'https://api.dev.mxplay.com/v1/home/tab/5',
   cookies: "userId=123;platform=com.mxplay.mobile",
-  json: browseSection,
+  json: homeSection,
   method: 'GET'
 },{
   id: 12,
@@ -100,15 +97,56 @@ var apis = [{
   displayName: 'Movie Sections',
   url: 'https://api.dev.mxplay.com/v1/home/tab/6',
   cookies: "userId=123;platform=com.mxplay.mobile",
-  json: browseSection,
+  json: homeSection,
   method: 'GET'
-}
-,{
+},{
   id: 14,
-  displayName: 'VideoDetailPage',
+  displayName: 'MusicDetailPage',
   url: 'https://api.dev.mxplay.com/v1/detail/video?type=music&id=09f3b8228d754fd3325b0a6584173120',
   cookies: "userId=123;platform=com.mxplay.mobile",
   json: MusicVideoDetailPage,
+  method: 'GET'
+},{
+  id: 15,
+  displayName: 'MovieDetailPage',
+  url: 'https://api.dev.mxplay.com/v1/detail/video?type=movie&id=40b909b225b57496e6e1550ff7fe0e70',
+  cookies: "userId=123;platform=com.mxplay.mobile",
+  json: MusicVideoDetailPage,
+  method: 'GET'
+},{
+  id: 16,
+  displayName: 'ShortDetailPage',
+  url: 'https://api.dev.mxplay.com/v1/detail/video?type=shorts&id=fcafb2e727325862e08b77f93345a122',
+  cookies: "userId=123;platform=com.mxplay.mobile",
+  json: MusicVideoDetailPage,
+  method: 'GET'
+},{
+  id: 17,
+  displayName: 'EpisodeDetailPage',
+  url: 'https://api.dev.mxplay.com/v1/detail/video?type=episode&id=45bacdc37c8c025eb1644cf04657da86',
+  cookies: "userId=123;platform=com.mxplay.mobile",
+  json: MusicVideoDetailPage,
+  method: 'GET'
+},{
+  id: 18,
+  displayName: 'tvshowDetailPage',
+  url: 'https://api.dev.mxplay.com/v1/detail/video?type=episode&id=45bacdc37c8c025eb1644cf04657da86',
+  cookies: "userId=123;platform=com.mxplay.mobile",
+  json: tvshowDetailPage,
+  method: 'GET'
+},{
+  id: 19,
+  displayName: 'seasonDetailPage',
+  url: 'https://api.dev.mxplay.com/v1/detail/collection?type=season&id=bd4a04179ffee49c9bfa2bd46c01ae04',
+  cookies: "userId=123;platform=com.mxplay.mobile",
+  json: tvshowDetailPage,
+  method: 'GET'
+},{
+  id: 20,
+  displayName: 'albumDetailPage',
+  url: 'https://api.dev.mxplay.com/v1/detail/collection?type=season&id=bd4a04179ffee49c9bfa2bd46c01ae04',
+  cookies: "userId=123;platform=com.mxplay.mobile",
+  json: tvshowDetailPage,
   method: 'GET'
 }
 ]
