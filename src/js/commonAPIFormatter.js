@@ -46,7 +46,7 @@ class APIItem extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      open: false
+      open: true
     }
     this.toggleItem = this.toggleItem.bind(this)
     this.runTest = this.runTest.bind(this)
@@ -127,19 +127,52 @@ class Paginator extends React.Component {
     let pages = []
     for (var key in this.props.data) {
       pages.push(
-        <div className='page'>
-          <span className='page-num page-attr inline'>{key}</span>
-          <span className='page-url page-attr inline'>{this.props.data[key].url}</span>
-        </div>
+        <Page data={this.props.data[key]} pageNum={key} />
       )
     }
     return (
       <div className='paginator'>
         <div className='paginator-header'>
-          <span className='page-num page-attr inline'>{key}</span>
-          <span className='page-url page-attr inline'>{this.props.data[key].url}</span>
+          <span className='page-num page-attr inline'>Page No</span>
+          <span className='page-url page-attr inline'>URL</span>
+          <span className='page-status page-attr inline'>Test Result</span>
         </div>
         <div className='paginator-content'>{pages}</div>
+      </div>
+    )
+  }
+}
+
+class Page extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      open: false
+    }
+    this.toggle = this.toggle.bind(this)
+  }
+  toggle () {
+    this.setState({ open: !this.state.open })
+  }
+  render () {
+    const { data, pageNum } = this.props
+    const hasError = (data.result.errorResult && data.result.errorResult.length)
+    const result = hasError ? `${data.result.errorResult.length} Errors Present !` : 'All Okay !'
+    const resultClass = hasError ? 'page-attr-error' : ''
+
+    return (
+      <div className={`page ${this.state.open ? 'open' : ''}`}>
+        <div className='page-header' onClick={this.toggle}>
+          <span className='page-num page-attr inline'>Page {pageNum}</span>
+          <span className='page-url page-attr inline'>{data.url}</span>
+          <span className={`page-status page-attr inline ${resultClass}`}>{result}</span>
+          <div className='open-item' />
+        </div>
+        {this.state.open &&
+          <div className='page-content'>
+            <Reporter response={data.result} />
+          </div>
+        }
       </div>
     )
   }

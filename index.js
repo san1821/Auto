@@ -14,6 +14,8 @@ app.get('/*', function(req, res) {
   res.render('index')
 })
 
-app.listen(4000, ()=> {
-  console.log("Server started at 4000")
+const port = (process.env.PORT || 2000)
+
+app.listen(port, ()=> {
+  console.log("Server started at", port)
 })

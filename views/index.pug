@@ -163,7 +163,7 @@ html(lang='en')
         transition: 0.5s transform;
         transform: translateY(-50%) rotate(135deg);
       }
-      .api-item.open .open-item {
+      .api-item.open>.api-item-header>.open-item, .page.open>.page-header>.open-item {
         transform: translateY(-50%) rotate(-45deg);
       }
       .api-item-content {
@@ -259,6 +259,42 @@ html(lang='en')
         display: inline-block;
         vertical-align: top;
         margin: 0 5px;
+      }
+
+      .paginator {
+        margin-top: 20px;
+      }
+      .paginator-header {
+        padding: 10px;
+        font-size: 16px;
+        font-weight: 700;
+        background-color: #222d31;
+      }
+      .paginator-header .page-attr {
+        color: #f39c12;
+      }
+      .page-header {
+        position: relative;
+      }
+      .page-attr {
+        min-width: 150px;
+        margin-right: 30px;
+      }
+      .page-attr.page-url {
+        width: 500px;
+      }
+      .page {
+        line-height: 20px;
+        padding: 10px;
+        border: 1px solid #222d31;
+        margin-top: -1px;
+      }
+      .page-status {
+        color: #00e278;
+      }
+      .page-status.page-attr-error {
+        color: #dc0000;
+        font-weight: 800;
       }
   body
     div(id='main-content')

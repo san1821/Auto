@@ -29482,6 +29482,16 @@ var apis = [{
   paginationUrl: function paginationUrl(url, prevData, pageNum) {
     return prevData.next ? url + '?' + prevData.next : null;
   }
+}, {
+  id: 2,
+  displayName: 'Buzz Sections',
+  url: 'https://api.mxplay.com/v1/home/tab/3',
+  cookies: "userId=123;platform=com.mxplay.mobile",
+  json: _homeSection2.default,
+  method: 'GET',
+  paginationUrl: function paginationUrl(url, prevData, pageNum) {
+    return prevData.next ? url + '?' + prevData.next : null;
+  }
 }];
 
 module.exports = apis;
@@ -30432,7 +30442,7 @@ var APIItem = function (_React$Component2) {
     var _this3 = _possibleConstructorReturn(this, (APIItem.__proto__ || Object.getPrototypeOf(APIItem)).call(this, props));
 
     _this3.state = {
-      open: false
+      open: true
     };
     _this3.toggleItem = _this3.toggleItem.bind(_this3);
     _this3.runTest = _this3.runTest.bind(_this3);
@@ -30613,20 +30623,7 @@ var Paginator = function (_React$Component3) {
     value: function render() {
       var pages = [];
       for (var key in this.props.data) {
-        pages.push(_react2.default.createElement(
-          'div',
-          { className: 'page' },
-          _react2.default.createElement(
-            'span',
-            { className: 'page-num page-attr inline' },
-            key
-          ),
-          _react2.default.createElement(
-            'span',
-            { className: 'page-url page-attr inline' },
-            this.props.data[key].url
-          )
-        ));
+        pages.push(_react2.default.createElement(Page, { data: this.props.data[key], pageNum: key }));
       }
       return _react2.default.createElement(
         'div',
@@ -30637,12 +30634,17 @@ var Paginator = function (_React$Component3) {
           _react2.default.createElement(
             'span',
             { className: 'page-num page-attr inline' },
-            key
+            'Page No'
           ),
           _react2.default.createElement(
             'span',
             { className: 'page-url page-attr inline' },
-            this.props.data[key].url
+            'URL'
+          ),
+          _react2.default.createElement(
+            'span',
+            { className: 'page-status page-attr inline' },
+            'Test Result'
           )
         ),
         _react2.default.createElement(
@@ -30657,20 +30659,87 @@ var Paginator = function (_React$Component3) {
   return Paginator;
 }(_react2.default.Component);
 
-var Reporter = function (_React$Component4) {
-  _inherits(Reporter, _React$Component4);
+var Page = function (_React$Component4) {
+  _inherits(Page, _React$Component4);
+
+  function Page(props) {
+    _classCallCheck(this, Page);
+
+    var _this5 = _possibleConstructorReturn(this, (Page.__proto__ || Object.getPrototypeOf(Page)).call(this, props));
+
+    _this5.state = {
+      open: false
+    };
+    _this5.toggle = _this5.toggle.bind(_this5);
+    return _this5;
+  }
+
+  _createClass(Page, [{
+    key: 'toggle',
+    value: function toggle() {
+      this.setState({ open: !this.state.open });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          data = _props.data,
+          pageNum = _props.pageNum;
+
+      var hasError = data.result.errorResult && data.result.errorResult.length;
+      var result = hasError ? data.result.errorResult.length + ' Errors Present !' : 'All Okay !';
+      var resultClass = hasError ? 'page-attr-error' : '';
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'page ' + (this.state.open ? 'open' : '') },
+        _react2.default.createElement(
+          'div',
+          { className: 'page-header', onClick: this.toggle },
+          _react2.default.createElement(
+            'span',
+            { className: 'page-num page-attr inline' },
+            'Page ',
+            pageNum
+          ),
+          _react2.default.createElement(
+            'span',
+            { className: 'page-url page-attr inline' },
+            data.url
+          ),
+          _react2.default.createElement(
+            'span',
+            { className: 'page-status page-attr inline ' + resultClass },
+            result
+          ),
+          _react2.default.createElement('div', { className: 'open-item' })
+        ),
+        this.state.open && _react2.default.createElement(
+          'div',
+          { className: 'page-content' },
+          _react2.default.createElement(Reporter, { response: data.result })
+        )
+      );
+    }
+  }]);
+
+  return Page;
+}(_react2.default.Component);
+
+var Reporter = function (_React$Component5) {
+  _inherits(Reporter, _React$Component5);
 
   function Reporter(props) {
     _classCallCheck(this, Reporter);
 
-    var _this5 = _possibleConstructorReturn(this, (Reporter.__proto__ || Object.getPrototypeOf(Reporter)).call(this, props));
+    var _this6 = _possibleConstructorReturn(this, (Reporter.__proto__ || Object.getPrototypeOf(Reporter)).call(this, props));
 
-    _this5.state = {
+    _this6.state = {
       type: 'final'
     };
-    _this5.gotoFinal = _this5.gotoFinal.bind(_this5);
-    _this5.gotoError = _this5.gotoError.bind(_this5);
-    return _this5;
+    _this6.gotoFinal = _this6.gotoFinal.bind(_this6);
+    _this6.gotoError = _this6.gotoError.bind(_this6);
+    return _this6;
   }
 
   _createClass(Reporter, [{
@@ -30708,8 +30777,8 @@ var Reporter = function (_React$Component4) {
   return Reporter;
 }(_react2.default.Component);
 
-var JSONATER = function (_React$Component5) {
-  _inherits(JSONATER, _React$Component5);
+var JSONATER = function (_React$Component6) {
+  _inherits(JSONATER, _React$Component6);
 
   function JSONATER() {
     _classCallCheck(this, JSONATER);
@@ -30735,19 +30804,19 @@ var JSONATER = function (_React$Component5) {
   return JSONATER;
 }(_react2.default.Component);
 
-var JSONATERITEM = function (_React$Component6) {
-  _inherits(JSONATERITEM, _React$Component6);
+var JSONATERITEM = function (_React$Component7) {
+  _inherits(JSONATERITEM, _React$Component7);
 
   function JSONATERITEM(props) {
     _classCallCheck(this, JSONATERITEM);
 
-    var _this7 = _possibleConstructorReturn(this, (JSONATERITEM.__proto__ || Object.getPrototypeOf(JSONATERITEM)).call(this, props));
+    var _this8 = _possibleConstructorReturn(this, (JSONATERITEM.__proto__ || Object.getPrototypeOf(JSONATERITEM)).call(this, props));
 
-    _this7.state = {
+    _this8.state = {
       open: true
     };
-    _this7.toggle = _this7.toggle.bind(_this7);
-    return _this7;
+    _this8.toggle = _this8.toggle.bind(_this8);
+    return _this8;
   }
 
   _createClass(JSONATERITEM, [{
@@ -30815,19 +30884,19 @@ var JSONATERITEM = function (_React$Component6) {
   return JSONATERITEM;
 }(_react2.default.Component);
 
-var JSONATERARRAY = function (_React$Component7) {
-  _inherits(JSONATERARRAY, _React$Component7);
+var JSONATERARRAY = function (_React$Component8) {
+  _inherits(JSONATERARRAY, _React$Component8);
 
   function JSONATERARRAY(props) {
     _classCallCheck(this, JSONATERARRAY);
 
-    var _this8 = _possibleConstructorReturn(this, (JSONATERARRAY.__proto__ || Object.getPrototypeOf(JSONATERARRAY)).call(this, props));
+    var _this9 = _possibleConstructorReturn(this, (JSONATERARRAY.__proto__ || Object.getPrototypeOf(JSONATERARRAY)).call(this, props));
 
-    _this8.state = {
+    _this9.state = {
       open: true
     };
-    _this8.toggle = _this8.toggle.bind(_this8);
-    return _this8;
+    _this9.toggle = _this9.toggle.bind(_this9);
+    return _this9;
   }
 
   _createClass(JSONATERARRAY, [{
@@ -30838,9 +30907,9 @@ var JSONATERARRAY = function (_React$Component7) {
   }, {
     key: 'render',
     value: function render() {
-      var _props = this.props,
-          data = _props.data,
-          index = _props.index;
+      var _props2 = this.props,
+          data = _props2.data,
+          index = _props2.index;
 
       return _react2.default.createElement(
         'div',
@@ -30868,8 +30937,8 @@ var JSONATERARRAY = function (_React$Component7) {
   return JSONATERARRAY;
 }(_react2.default.Component);
 
-var ErrorReport = function (_React$Component8) {
-  _inherits(ErrorReport, _React$Component8);
+var ErrorReport = function (_React$Component9) {
+  _inherits(ErrorReport, _React$Component9);
 
   function ErrorReport() {
     _classCallCheck(this, ErrorReport);
@@ -31419,7 +31488,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function runAllTests(dispatch, payload) {
   for (var i = 0; i < _paginatedAPIManifest2.default.length; i++) {
-    makeAPICall(_paginatedAPIManifest2.default[i], dispatch);
+    makeAPICall(_paginatedAPIManifest2.default[i], dispatch, 0);
   }
 }
 

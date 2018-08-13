@@ -4,7 +4,8 @@
   "description": "An API testing framework",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --inspect index.js",
+    "start": "npm install && node server/index.js",
+    "dev": "nodemon --inspect index.js",
     "build": "webpack --watch --info-verbosity verbose --config ./webpack.config.js"
   },
   "author": "Sanjay Chaudhari",

@@ -5,7 +5,7 @@ import testJSONStructure from './testJSONStructure'
 
 export function runAllTests (dispatch, payload) {
   for (let i = 0; i < apiMeta.length; i++) {
-    makeAPICall(apiMeta[i], dispatch)
+    makeAPICall(apiMeta[i], dispatch, 0)
   }
 }
 
