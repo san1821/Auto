@@ -10,7 +10,7 @@ app.set('view engine', 'pug')
 
 app.use(express.static('dist'))      // use dist/app.js for render
 
-app.get('/', function(req, res) {
+app.get('/*', function(req, res) {
   res.render('index')
 })
 
